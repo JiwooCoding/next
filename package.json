@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"    
+    "start": "next start"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,6 @@
   "devDependencies": {
     "@types/node": "22.7.7",
     "@types/react": "18.3.11",
-    "typescript": "5.6.3"
+    "typescript": "^5.6.3"
   }
 }
