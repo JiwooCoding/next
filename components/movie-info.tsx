@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React from 'react'
-import { API_URL } from '../app/(home)/page';
 import styles from '../styles/movie-info.module.css'
 import MovieSimilar from './movie-similar';
+import { API_URL } from '../app/contant';
 
 export const getMovies = async(id:string) => {
     console.log(`Fetching movies ${Date.now()}`);
