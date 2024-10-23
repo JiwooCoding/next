@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React from 'react'
-import { API_URL } from '../app/(home)/page'
+import { API_URL } from '../app/contant';
 
 const getMovieSimliar = async(id:string) => {
     const response = await axios.get(`${API_URL}/${id}/similar`);
