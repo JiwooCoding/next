@@ -1,7 +1,7 @@
-import axios from "axios";
 import Link from "next/link";
-import { resolve } from "path";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import Movie from "../../components/movie";
+import styles from '../../styles/home.module.css'
 
 export const metadata = {
     title:'home'
@@ -10,7 +10,7 @@ export const metadata = {
 export const API_URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
 
 const getMovies = async() => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    //await new Promise((resolve) => setTimeout(resolve, 1000));
     const response = await fetch(API_URL);
     const json = await response.json();
     return json;
@@ -20,11 +20,14 @@ const HomePage = async() => {
     const movies = await getMovies();
 
     return (
-        <div>
+        <div className={styles.container}>
             {movies.map(movie => (
-                <li key={movie.id}>
-                    <Link href={`/movies/${movie.id}`}>{movie.title}</Link>
-                </li>
+                <Movie 
+                    key={movie.id}
+                    poster_path={movie.poster_path}
+                    title={movie.title}
+                    id={movie.id}
+                />
             ))}
         </div>
     )
